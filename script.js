@@ -1,10 +1,39 @@
 // Portal App JavaScript
 
 document.addEventListener('DOMContentLoaded', () => {
+    initLoadingScreen();
     initTheme();
     initSearch();
     initCards();
 });
+
+function initLoadingScreen() {
+    const screen = document.getElementById('loading-screen');
+    if (!screen) return;
+
+    const hasShown = localStorage.getItem('pln-loading-done');
+    if (hasShown === 'true') {
+        screen.classList.add('done');
+        document.body.classList.add('content-loaded');
+        return;
+    }
+
+    function hideLoader() {
+        screen.classList.add('fade-out');
+        setTimeout(() => {
+            screen.classList.add('done');
+            document.body.classList.add('content-loaded');
+            localStorage.setItem('pln-loading-done', 'true');
+        }, 500);
+    }
+
+    if (document.readyState === 'complete') {
+        setTimeout(hideLoader, 100);
+    } else {
+        window.addEventListener('load', hideLoader);
+    }
+}
+
 
 function initTheme() {
     const root = document.documentElement;

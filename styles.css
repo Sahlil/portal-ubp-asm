@@ -255,7 +255,43 @@ body {
     display: none;
 }
 
+/* Loading Screen Overlay */
+#loading-screen {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.9);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 500ms ease;
+}
+
+#loading-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#loading-screen.done {
+    display: none;
+}
+
+#loading-screen .capybaraloader {
+    transform: scale(1);
+}
+
+body:not(.content-loaded) > *:not(#loading-screen) {
+    opacity: 0;
+}
+
+body.content-loaded > *:not(#loading-screen) {
+    opacity: 1;
+    transition: opacity 300ms ease;
+}
+
 @media (prefers-reduced-motion: reduce) {
+    #loading-screen,
     .app-card,
     .app-card-thumbnails img,
     .app-card-action {

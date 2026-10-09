@@ -18,14 +18,14 @@
 <body class="flex flex-col h-screen text-gray-800">
 
     <!-- Header -->
-    <header class="bg-white border-b border-gray-200 h-[64px] flex items-center justify-between px-4 lg:px-6 shrink-0 z-10 shadow-sm relative">
+    <header class="portal-header h-[64px] flex items-center justify-between px-4 lg:px-6 shrink-0 z-10 shadow-sm relative">
         
         <!-- Left: Logo -->
         <div class="flex items-center gap-3 w-64 shrink-0 cursor-pointer">
-            <img src="assets/pln.webp" alt="PLN Logo" class="w-9 h-9 object-contain">
+            <img src="assets/pln-indonesia-power-logo.webp" alt="PLN Logo" class="w-64 h-32">
             <div class="flex flex-col leading-none">
-                <span class="text-[#00529C] font-extrabold text-[17px] tracking-tight">PLN</span>
-                <span class="text-gray-500 text-[11px] font-medium mt-[2px]">Indonesia Power</span>
+                <!-- <span class="text-[#00529C] font-extrabold text-[17px] tracking-tight">PLN</span>
+                <span class="text-gray-500 text-[11px] font-medium mt-[2px]">Indonesia Power</span> -->
             </div>
         </div>
 
@@ -42,22 +42,25 @@
         </div>
 
         <!-- Right: Search Icon (Mobile) & Actions -->
-        <div class="flex items-center justify-end w-12 md:w-64 shrink-0">
-            <button class="p-2 text-red-500 hover:bg-red-50 rounded-full transition-colors flex items-center justify-center">
-                <i class="fas fa-search"></i>
+        <div class="flex items-center justify-end gap-1 w-20 md:w-64 shrink-0">
+            <button id="theme-toggle" class="theme-toggle p-2 rounded-full transition-colors flex items-center justify-center" type="button" aria-label="Aktifkan mode gelap" aria-pressed="false">
+                <span aria-hidden="true">&#9790;</span>
             </button>
+            <!-- <button id="search-btn" class="p-2 text-red-500 hover:bg-red-50 rounded-full transition-colors flex items-center justify-center" aria-label="Cari">
+                <i class="fas fa-search"></i>
+            </button> -->
         </div>
     </header>
 
     <div class="flex flex-1 overflow-hidden">
 
         <!-- Main Content Area -->
-        <main class="flex-1 bg-[#f4f7f6] p-6 lg:p-8 overflow-y-auto main-scroll">
+        <main class="portal-main flex-1 p-6 lg:p-8 overflow-y-auto main-scroll">
             
             <div class="max-w-7xl mx-auto product-card-container pb-10">
                 
                 <!-- Card 1: IP Trace -->
-                <section class="app-card" style="--card-accent: #ddee40;">
+                <section class="app-card" style="--card-accent: #0f766e;">
                     <h2 class="app-card-title">IP Trace</h2>
                     <div class="app-card-thumbnails">
                         <img src="assets/iptrace.webp" alt="Tampilan aplikasi IP Trace">
@@ -69,11 +72,11 @@
                         <li>Network</li>
                         <li>Monitoring</li>
                     </ul>
-                    <button class="app-card-action" type="button">Buka aplikasi</button>
+                    <a href="#" class="app-card-action" aria-label="Buka aplikasi IP Trace">Buka aplikasi</a>
                 </section>
 
                 <!-- Card 2: Share Point -->
-                <section class="app-card" style="--card-accent: #0cc20c;">
+                <section class="app-card" style="--card-accent: #c2410c;">
                     <h2 class="app-card-title">Share Point</h2>
                     <div class="app-card-thumbnails">
                         <img src="assets/SharePoint-Symbol.webp" alt="Logo SharePoint">
@@ -85,7 +88,7 @@
                         <li>Document</li>
                         <li>Teamwork</li>
                     </ul>
-                    <button class="app-card-action" type="button">Buka aplikasi</button>
+                    <a href="#" class="app-card-action" aria-label="Buka aplikasi Share Point">Buka aplikasi</a>
                 </section>
 
                 <!-- Card 3: GDrive -->
@@ -101,7 +104,7 @@
                         <li>Cloud</li>
                         <li>Storage</li>
                     </ul>
-                    <button class="app-card-action" type="button">Buka aplikasi</button>
+                    <a href="#" class="app-card-action" aria-label="Buka aplikasi GDrive">Buka aplikasi</a>
                 </section>
 
             </div>

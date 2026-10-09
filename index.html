@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLN Indonesia Power - Portal</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Kiso CSS utilities used by the card template -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/kiso.css@latest/kiso.css">
+    <!-- Font Awesome for Icons (fallback) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="flex flex-col h-screen text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 h-[64px] flex items-center justify-between px-4 lg:px-6 shrink-0 z-10 shadow-sm relative">
+        
+        <!-- Left: Logo -->
+        <div class="flex items-center gap-3 w-64 shrink-0 cursor-pointer">
+            <img src="assets/pln.webp" alt="PLN Logo" class="w-9 h-9 object-contain">
+            <div class="flex flex-col leading-none">
+                <span class="text-[#00529C] font-extrabold text-[17px] tracking-tight">PLN</span>
+                <span class="text-gray-500 text-[11px] font-medium mt-[2px]">Indonesia Power</span>
+            </div>
+        </div>
+
+        <!-- Center: Search Bar -->
+        <div class="flex-1 max-w-2xl mx-4 hidden md:block">
+            <div class="relative w-full">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <i class="fas fa-search text-gray-400 text-sm"></i>
+                </div>
+                <input type="text" 
+                       class="w-full bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block pl-10 p-2.5 transition-colors placeholder-gray-400 shadow-inner" 
+                       placeholder="Cari aplikasi favorit Anda berdasarkan nama atau kat">
+            </div>
+        </div>
+
+        <!-- Right: Search Icon (Mobile) & Actions -->
+        <div class="flex items-center justify-end w-12 md:w-64 shrink-0">
+            <button class="p-2 text-red-500 hover:bg-red-50 rounded-full transition-colors flex items-center justify-center">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="flex flex-1 overflow-hidden">
+
+        <!-- Main Content Area -->
+        <main class="flex-1 bg-[#f4f7f6] p-6 lg:p-8 overflow-y-auto main-scroll">
+            
+            <div class="max-w-7xl mx-auto product-card-container pb-10">
+                
+                <!-- Card 1: IP Trace -->
+                <section class="app-card" style="--card-accent: #ddee40;">
+                    <h2 class="app-card-title">IP Trace</h2>
+                    <div class="app-card-thumbnails">
+                        <img src="assets/iptrace.webp" alt="Tampilan aplikasi IP Trace">
+                        <img src="assets/iptrace.webp" alt="" aria-hidden="true">
+                    </div>
+                    <!-- <p class="app-card-category">Application</p> -->
+                    <p class="app-card-description">Portal pelacakan informasi aplikasi dan jaringan PLN.</p>
+                    <ul class="app-card-tags" aria-label="Kategori IP Trace">
+                        <li>Network</li>
+                        <li>Monitoring</li>
+                    </ul>
+                    <button class="app-card-action" type="button">Buka aplikasi</button>
+                </section>
+
+                <!-- Card 2: Share Point -->
+                <section class="app-card" style="--card-accent: #0cc20c;">
+                    <h2 class="app-card-title">Share Point</h2>
+                    <div class="app-card-thumbnails">
+                        <img src="assets/SharePoint-Symbol.webp" alt="Logo SharePoint">
+                        <img src="assets/SharePoint-Symbol.webp" alt="" aria-hidden="true">
+                    </div>
+                    <!-- <p class="app-card-category">Collaboration</p> -->
+                    <p class="app-card-description">Ruang kerja dan dokumen bersama untuk tim PLN.</p>
+                    <ul class="app-card-tags" aria-label="Kategori Share Point">
+                        <li>Document</li>
+                        <li>Teamwork</li>
+                    </ul>
+                    <button class="app-card-action" type="button">Buka aplikasi</button>
+                </section>
+
+                <!-- Card 3: GDrive -->
+                <section class="app-card" style="--card-accent: #1d4ed8;">
+                    <h2 class="app-card-title">GDrive</h2>
+                    <div class="app-card-thumbnails">
+                        <img src="assets/gdrive.webp" alt="Tampilan Google Drive">
+                        <img src="assets/gdrive.webp" alt="" aria-hidden="true">
+                    </div>
+                    <!-- <p class="app-card-category">Storage</p> -->
+                    <p class="app-card-description">Penyimpanan dan berbagi berkas operasional.</p>
+                    <ul class="app-card-tags" aria-label="Kategori GDrive">
+                        <li>Cloud</li>
+                        <li>Storage</li>
+                    </ul>
+                    <button class="app-card-action" type="button">Buka aplikasi</button>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Custom Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

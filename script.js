@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initLoadingScreen();
     initTheme();
     initSearch();
-    initCards();
 });
 
 function initLoadingScreen() {
@@ -102,16 +101,4 @@ function filterCards(query) {
             card.classList.toggle('is-hidden', !text.includes(q));
         });
     }, 250);
-}
-
-function initCards() {
-    const cards = document.querySelectorAll('.app-card');
-    
-    cards.forEach(card => {
-        card.querySelector('.app-card-action').addEventListener('click', (e) => {
-            e.preventDefault();
-            const title = card.querySelector('.app-card-title')?.textContent || 'Aplikasi';
-            console.log(`Opening: ${title}`);
-        });
-    });
 }
